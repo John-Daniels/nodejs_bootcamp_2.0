@@ -1,0 +1,12 @@
+{
+  "name": "day3",
+  "version": "1.0.0",
+  "description": "Day3 of the nodejs_bootcamp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "John Daniels",
+  "license": "ISC"
+}
