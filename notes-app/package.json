@@ -2,10 +2,10 @@
   "name": "notes-app",
   "version": "1.0.0",
   "description": "Node app command line tool",
-  "main": "index.js",
+  "main": "notes.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node notes",
+    "dev": "nodemon notes"
   },
   "author": "John-Daniels",
   "license": "ISC",
