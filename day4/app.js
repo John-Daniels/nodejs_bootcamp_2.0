@@ -5,23 +5,38 @@ yargs.version("v1.1.0-beta"); // setting your cmd version.
 yargs.command({
   command: "add",
   describe: "Add a new note!",
-  handler: function () {
+  builder: {
+    title: {
+      describe: "Note Title",
+      demandOption: true,
+      type: "string",
+    },
+    body: {
+      describe: "Note Body",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: function (argv) {
     console.log("Adding a new note!");
+    console.log("Title: ", argv.title);
+    console.log("Body: ", argv.body);
   },
 });
 
-
-
-// Challange 1
-// 1.) Use Yargs to handle a command that removes a note
-// 2.) console.log("Removing a note...") for the handler
-// 5mins...
-
-
-
-
-
-
+yargs.command({
+  command: "remove",
+  describe: "Remove a Note",
+  builder: {
+    title: {
+      describe: "Note Title",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: function (argv) {
+    console.log(`Removing ${argv.title}`);
+  },
+});
 
 yargs.parse();
-
