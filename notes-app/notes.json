@@ -1,11 +1,5 @@
 [
-  {
-    "title": "Node.js Note",
-    "body": "Node.js is javascript Runtime Enviroment powered by Chrome's V8 Engine"
-  },
-  { "title": "New Note", "body": "Note Body here!" },
-  { "title": "working with Argv", "body": "Argv Arguments is interesting" },
-  { "title": "Peter & Paul tales", "body": "History of Peter & Paul" },
-  { "title": "Peter & Paul tales 2", "body": "History of Peter & Paul" },
-  { "title": "Peter & Paul tales v3", "body": "History of Peter & Paul" }
+  { "title": "my note 1", "body": "this is my note1" },
+  { "title": "my note 2", "body": "this is my note1" },
+  { "title": "my note 4", "body": "this is my note1" }
 ]

@@ -1,14 +1,14 @@
 {
   "name": "notes-app",
   "version": "1.0.0",
-  "description": "Node app command line tool",
+  "description": "A Node.js Notes app cli",
   "main": "notes.js",
   "scripts": {
-    "start": "node notes",
-    "dev": "nodemon notes"
+    "start": "node notes.js",
+    "dev": "nodemon notes.js"
   },
   "author": "John-Daniels",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "yargs": "^17.7.1"
   },
