@@ -36,6 +36,9 @@ yargs.command({
       body: argv.body,
     };
 
+    // Task 1
+    // model the notes to have an id => use the uuid package generate uniques for each note.
+
     notes.push(newNote);
     //  writeFile
     const updateNotes = JSON.stringify(notes);
@@ -71,9 +74,17 @@ yargs.command({
     const updatedNotes = JSON.stringify(notes); // convert notes array to a json string
     fs.writeFileSync(notesJsonDir, updatedNotes);
     console.log(`Succesfully Removed ${title}!`);
+
+    // Task 2
     // throw an error to the user if the title is not found! 404
   },
 });
+
+// Task 3
+// List all notes
+
+// Task 4
+// Read a note by its title
 
 // parse your command
 yargs.parse();
