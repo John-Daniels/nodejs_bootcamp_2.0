@@ -23,7 +23,7 @@ yargs.command({
       type: "string",
     },
   },
-  handler: function (argv) {
+  handler(argv) {
     console.log(argv.title);
     console.log(argv.body);
 
@@ -49,7 +49,7 @@ yargs.command({
 
 // create a command that removes a note - [x]
 // use the command setup options used in the add command - [x]
-// output this 'succesfully removed [node_name]' - [ ]
+// output this 'succesfully removed [node_name]' - [x]
 
 yargs.command({
   command: "remove",
@@ -61,7 +61,7 @@ yargs.command({
       type: "string",
     },
   },
-  handler: function (argv) {
+  handler(argv) {
     const title = argv.title;
     // reading the note.json file
     const notesJson = fs.readFileSync(notesJsonDir, "utf-8");
@@ -80,11 +80,46 @@ yargs.command({
   },
 });
 
-// Task 3
 // List all notes
+yargs.command({
+  command: "list",
+  describe: "List all notes",
+  handler(argv) {
+    // read the notes
+    const notesJson = fs.readFileSync(notesJsonDir, "utf-8"); // json string
+    const notes = JSON.parse(notesJson);
 
-// Task 4
+    notes.map((note, i) => {
+      console.log(`${i + 1}. ${note.title}\n"${note.body}"`);
+    });
+  },
+});
+
 // Read a note by its title
+yargs.command({
+  command: "read",
+  describe: "Read a note by its title",
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler(argv) {
+    const title = argv.title;
+    // read the notes
+    const notesJson = fs.readFileSync(notesJsonDir, "utf-8"); // json string
+    const notes = JSON.parse(notesJson);
+
+    const note = notes.find((note) => note.title === title);
+    if (note) {
+      console.log(`${note.title}\n"${note.body}"`);
+    } else {
+      console.log(`Note with title ${title} not Found!`);
+    }
+  },
+});
 
 // parse your command
 yargs.parse();
