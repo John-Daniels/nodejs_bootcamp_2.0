@@ -1,14 +1,12 @@
 [
-  {
-    "title": "My Nodejs Notebook",
-    "body": "Node.js is javascript Runtime Enviroment powered by Chrome's V8 Engine"
-  },
-  {
-    "title": "My Reactjs Notebook",
-    "body": "React is component based ui library"
-  },
-  { "title": "My JS Notebook", "body": "A beautiful Language" },
-  { "title": "My GraphQL Notebook", "body": "Short for Graph Query Language" },
-  { "title": "Peter & Paul tales", "body": "History of Peter & Paul" },
-  { "title": "Peter & Paul tales", "body": "History of Peter & Paul" }
+  { "title": "My First Note", "body": "This is my first note" },
+  { "title": "My Second Note", "body": "This is my Second note" },
+  { "title": "My Thrid Note", "body": "This is my Thrid note" },
+  { "title": "My Fourth Note", "body": "This is my Fourth note" },
+  { "title": "My Fifth Note", "body": "This is my Fifth note" },
+  { "title": "My Sixth Note", "body": "This is my Sixth note" },
+  { "title": "My Seventh Note", "body": "This is my Seventh note" },
+  { "title": "My Eight Note", "body": "This is my Eight note" },
+  { "title": "My Sixth Note", "body": "This is my Sixth note" },
+  { "title": "My Seventh Note", "body": "This is my Seventh note" }
 ]

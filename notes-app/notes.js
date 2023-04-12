@@ -108,16 +108,23 @@ yargs.command({
   },
   handler(argv) {
     const title = argv.title;
-    // read the notes
-    const notesJson = fs.readFileSync(notesJsonDir, "utf-8"); // json string
-    const notes = JSON.parse(notesJson);
+    try {
+      // read the notes
+      const notesJson = fs.readFileSync(notesJsonDir, "utf-8"); // json string
+      const notes = JSON.parse(notesJson);
 
-    const note = notes.find((note) => note.title === title);
-    if (note) {
+      const note = notes.find((note) => note.title === title);
       console.log(`${note.title}\n"${note.body}"`);
-    } else {
+    } catch (e) {
       console.log(`Note with title ${title} not Found!`);
     }
+
+    // error handling if statements
+    // if (note) {
+    //   console.log(`${note.title}\n"${note.body}"`);
+    // } else {
+    //   console.log(`Note with title ${title} not Found!`);
+    // }
   },
 });
 

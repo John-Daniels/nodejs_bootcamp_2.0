@@ -1,11 +1,31 @@
-const note = {
-  title: "My Nodejs Notebook",
-  body: "Node.js is javascript Runtime Enviroment powered by Chrome's V8 Engine",
+const fs = require("fs");
+const path = require("path");
+
+const notesJsonDir = path.resolve(__dirname, "./notes.json");
+
+const noteJson = fs.readFileSync(notesJsonDir, "utf-8");
+// console.log(noteJson);
+let notes = JSON.parse(noteJson);
+
+const newNote = {
+  title: "My Sixth Note",
+  body: "This is my Sixth note",
 };
 
-// Convert Javascript object into JSON string
-const noteJSON = JSON.stringify(note);
+const newNote2 = {
+  title: "My Seventh Note",
+  body: "This is my Seventh note",
+};
 
-// Convert JSON string into object
-const noteObject = JSON.parse(noteJSON);
-console.log(noteObject.title);
+notes.push(newNote);
+notes.push(newNote2);
+
+notes.map((note, i) => {
+  console.log(i, note.title, note.body);
+});
+
+// note, b4 saving any javascript object...
+// convert back to json string
+
+const notesReadyToUpload = JSON.stringify(notes);
+fs.writeFileSync(notesJsonDir, notesReadyToUpload);
